@@ -2,48 +2,22 @@ import React, { useState } from 'react';
 import AgeInput from './AgeInput.jsx';
 import AgeResult from './AgeResult.jsx';
 import ErrorMessage from './ErrorMessage.jsx';
+import calculateAgeFromDOB from '../utils/calculateAge.js';
 
 export default function AgeCalculator() {
   const [birthDateStr, setBirthDateStr] = useState('');
   const [age, setAge] = useState(null);
   const [error, setError] = useState('');
 
-  const calculateAge = () => {
-    setError('');
-    if (!birthDateStr) return;
-
-    const [day, month, year] = birthDateStr.split('/').map(Number);
-
-    if (!day || !month || !year || day > 31 || month > 12 || year > new Date().getFullYear()) {
-      setError('Please enter a valid date in dd/mm/yyyy format');
+  const handleCalculate = () => {
+    const result = calculateAgeFromDOB(birthDateStr);
+    if (result.error) {
+      setError(result.error);
       setAge(null);
-      return;
+    } else {
+      setAge(result.age);
+      setError('');
     }
-
-    const birth = new Date(year, month - 1, day);
-    if (isNaN(birth)) {
-      setError('Invalid date format');
-      setAge(null);
-      return;
-    }
-
-    const today = new Date();
-    let years = today.getFullYear() - birth.getFullYear();
-    let months = today.getMonth() - birth.getMonth();
-    let days = today.getDate() - birth.getDate();
-
-    if (days < 0) {
-      months--;
-      const prevMonth = new Date(today.getFullYear(), today.getMonth(), 0);
-      days += prevMonth.getDate();
-    }
-
-    if (months < 0) {
-      years--;
-      months += 12;
-    }
-
-    setAge({ years, months, days });
   };
 
   return (
@@ -51,20 +25,19 @@ export default function AgeCalculator() {
       <AgeInput
         birthDateStr={birthDateStr}
         setBirthDateStr={setBirthDateStr}
-        onEnter={calculateAge}
+        onEnter={handleCalculate}
         resetAge={() => setAge(null)}
         clearError={() => setError('')}
       />
 
       <button
-        onClick={calculateAge}
+        onClick={handleCalculate}
         className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-all"
       >
         Calculate Age
       </button>
 
       <ErrorMessage error={error} />
-
       <AgeResult age={age} error={error} />
     </>
   );
