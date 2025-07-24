@@ -1,32 +1,42 @@
-# Age Calculator
+# 🎂 Age Calculator (React + Vite + TailwindCSS)
 
-![JavaScript](https://img.shields.io/badge/JavaScript-87.7%25-yellow?logo=javascript)
-![CSS](https://img.shields.io/badge/CSS-7.8%25-blue?logo=css3)
-![HTML](https://img.shields.io/badge/HTML-4.5%25-orange?logo=html5)
+![JavaScript](https://img.shields.io/badge/JavaScript-100%25-yellow?logo=javascript)
+![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-%20v3.3.5-teal?logo=tailwindcss)
 
 ## 🚀 Overview
 
-**Age Calculator** is a simple and interactive web application built with JavaScript, CSS, and HTML. Users can easily calculate their age in years, months, and days by entering their date of birth. The app provides a smooth user experience with a clean and responsive UI.
+**Age Calculator** is a modern, component-based React application that lets users calculate their exact age in years, months, and days. Built with **React**, **Tailwind CSS**, and **Vite**, this app features a responsive, clean, and minimal UI with real-time age calculation.
 
 ## ✨ Features
 
-- Calculate the exact age (years, months, days) from a given date of birth.
-- Instant results with dynamic input.
-- Responsive design works well on desktop and mobile devices.
-- Built using modern JavaScript, CSS, and HTML.
+- 📅 Select a date using calendar input or type manually.
+- 🎉 Dynamic age display (Years, Months, Days) with a special “Just Born” message.
+- ⚡ Real-time age calculation as you select a date.
+- 🧩 Modular codebase with `components/`, `hooks/`, and `utils/` folders.
+- 📱 Fully responsive layout for desktop and mobile.
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-- **JavaScript**: Core logic for age calculation and interactivity.
-- **CSS**: Styling and layout for a user-friendly interface.
-- **HTML**: Structure of the application.
+- **React**: Component-based UI framework
+- **Tailwind CSS**: Utility-first CSS for fast styling
+- **Vite**: Lightning-fast development server and build tool
+- **JavaScript (ES6+)**: Age calculation logic
 
-## 💡 How to Use
+## 💡 How to Run Locally
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/chandan-1427/Age-Calculator.git
-    ```
-2. Open `index.html` in your web browser.
-3. Enter your date of birth.
-4. Click the "Calculate" button to see your age.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/chandan-1427/age-calculator.git
+   cd age-calculator
+   
+Install dependencies:
+npm install
+
+Start the dev server:
+npm run dev
+
+Open in browser:
+Navigate to http://localhost:5173 and start calculating your age!
+
+Made with ❤️ by Chandan Dakka
