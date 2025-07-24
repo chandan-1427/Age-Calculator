@@ -8,6 +8,9 @@
 
 **Age Calculator** is a modern, component-based React application that lets users calculate their exact age in years, months, and days. Built with **React**, **Tailwind CSS**, and **Vite**, this app features a responsive, clean, and minimal UI with real-time age calculation.
 
+
+🟢 **Live Demo**:   [https://age-calculator-sigma-three.vercel.app/](https://age-calculator-sigma-three.vercel.app/)
+
 ## ✨ Features
 
 - 📅 Select a date using calendar input or type manually.
